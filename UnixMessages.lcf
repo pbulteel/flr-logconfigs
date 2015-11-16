@@ -1,0 +1,16 @@
+#########################################################
+# Authors: Patrick Bulteel
+# v1.0
+# 27/10/2015
+#########################################################
+[TITLE]Unix Messages Log 1.0
+[FILES]messages.(\d+)<-N1>,messages
+[FILES]syslog.(\d+)<-N1>,syslog
+[COLUMNS,count:6,logseperator: ,nameseperator:|,showheader]Month|Day|Time=1|Hostname|Process|Message
+
+# Check errors
+[TAG, bg(255,0,0)]Errors
+[TAG, bg(255,0,0)]Error
+[COMPARE,countstopmatching,nocase]Error
+[TAG, bg(255,0,0)]Input/Ouput Errors
+[COMPARE,countstopmatching,nocase]Input/Ouput error

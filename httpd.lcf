@@ -1,0 +1,19 @@
+#########################################################
+# Author: Patrick Bulteel
+# V 1.0
+# 10/06/2015
+#########################################################
+[TITLE]Captive HTTPD Logs V1.0
+[FILES]welcome-.*.access_ssl.log
+[COLUMNS,count:12,logseperator: ,nameseperator:|,showheader]IP|Client|Username|Time=1|TZone=2|Method|URL|Protocol|Status|Size|Referer|Agent
+
+# Mac Addresses
+[TAG]Mac Addresses
+[COMPARE,regex,countstopmatching]([0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+)
+
+[TAG]IP Addresses
+[COMPARE,regex,countstopmatching](^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$)
+
+#[TAG]Status
+#[COMPATE,regex,nocase]HTTP/1.1" (\d+)
+
