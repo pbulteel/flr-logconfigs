@@ -4,17 +4,18 @@
 # 10/06/2015
 #########################################################
 [TITLE]HTTPD Logs V1.0
-[FILES].*.access_ssl.log
-[FILES].*.access.log
-[COLUMNS,count:12,logseperator: ,nameseperator:|,showheader]IP|Client|Username|Time=1|TZone=2|Method|URL|Protocol|Status|Size|Referer|Agent
+[FILES].*access_ssl.log.(\d+)<-N1>,.*access_ssl.log
+[FILES].*access.log.(\d+)<-N1>,.*access.log
+[COLUMNS,count:12,logseperator: ,nameseperator:|,showheader]Client IP|Username|Password|DateTime|TZone|Method|URL|Protocol|Status|Size|Referer|Agent
 
 # Mac Addresses
-[TAG]Mac Addresses
-[COMPARE,regex,countstopmatching]([0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+)
+#[TAG]Mac Addresses
+#[COMPARE,regex,countstopmatching]([0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+-[0-9a-Z]+)
 
 [TAG]IP Addresses
-[COMPARE,regex,countstopmatching](^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$)
+[COMPARE,regex,countstopmatching]^(\d+\.\d+\.\d+\.\d+)$
+#[COMPARE,regex,countstopmatching](^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$)
 
-#[TAG]Status
-#[COMPATE,regex,nocase]HTTP/1.1" (\d+)
+[TAG]Status
+[COMPARE,regex]HTTP/1.[0,1]\" (\d+)
 
