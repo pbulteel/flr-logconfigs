@@ -3,8 +3,9 @@
 # V 1.0
 # 10/06/2015
 #########################################################
-[TITLE]Captive HTTPD Logs V1.0
-[FILES]welcome-.*.access_ssl.log
+[TITLE]HTTPD Logs V1.0
+[FILES].*.access_ssl.log
+[FILES].*.access.log
 [COLUMNS,count:12,logseperator: ,nameseperator:|,showheader]IP|Client|Username|Time=1|TZone=2|Method|URL|Protocol|Status|Size|Referer|Agent
 
 # Mac Addresses
