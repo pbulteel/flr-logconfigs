@@ -11,6 +11,6 @@ The FLR already comes with a few lcf files which allow you to read and parse som
 
 Here are a few of the ones that I have created/modified to be use with FLR 3.0.2 and that I use regurlarly.
 
+The files are free for use. SAP FlexiLogReader however is not licensed by me. Please refer to the license file included with FLR. 
 
---
 Patrick Bulteel

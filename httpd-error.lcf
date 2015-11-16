@@ -4,8 +4,8 @@
 # 10/06/2015
 #########################################################
 [TITLE]HTTPD Logs V1.0
-[FILES].*access_ssl.log.(\d+)<-N1>,.*access_ssl.log
-[FILES].*access.log.(\d+)<-N1>,.*access.log
+[FILES].*error_ssl.log.(\d+)<-N1>,.*error_ssl.log
+[FILES].*error.log.(\d+)<-N1>,.*error.log
 [COLUMNS,count:12,logseperator: ,nameseperator:|,showheader]Client IP|Username|Password|DateTime|TZone|Method|URL|Protocol|Status|Size|Referer|Agent
 
 # Mac Addresses
@@ -13,8 +13,7 @@
 [COMPARE,regex,countstopmatching]((([0-9A-Fa-f]{2}[-:]){5}[0-9A-Fa-f]{2})|(([0-9A-Fa-f]{4}\.){2}[0-9A-Fa-f]{4}))
 
 [TAG]IP Addresses
-#[COMPARE,regex,countstopmatching]^(\d+\.\d+\.\d+\.\d+)$
-[COMPARE,regex]((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))
+[COMPARE,regex,countstopmatching]((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))
 
 [TAG]Status
 [COMPARE,regex]HTTP/1.[0,1]\" (\d+)
