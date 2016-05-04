@@ -1,9 +1,9 @@
 # flr-logconfigs
 SAP FlexiLogReader Config files. (lcf)
 
-These are lcf files that can be used with SAP FlexiLogReader by Graham Sturmy.
+These are lcf files (configuration files/parsers) that can be used with the SAP FlexiLogReader written by Graham Sturmy at SAP.
 
-SAP FlexiLogReader page at SAP SCN.
+SAP FlexiLogReader can be found at SAP's SCN page below.
 
 http://wiki.scn.sap.com/wiki/x/VgOmFQ
 
