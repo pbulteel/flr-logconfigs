@@ -1,0 +1,15 @@
+#########################################################
+# Authors: Patrick Bulteel
+# v1.0
+# 08/11/2017
+#########################################################
+[TITLE]Telepo audit log Version 1.0
+[FILES]audit.log.(\d+)<-N1>,audit
+[COLUMNS,count:6,logseperator: ,nameseperator:|,showheader]Date|Time=1|User|Username|Action|ActionMessage
+
+# Check errors
+#[TAG]Test
+[TAG, bg(255,0,0)]Removed
+[COMPARE,countstopmatching,nocase]Removed old
+[TAG, bg(0,255,0)]Login
+[COMPARE,countstopmatching,nocase]Login
